@@ -65,7 +65,7 @@ def check_win(player):
         win = True
         newgame()
     if not win and not " " in board[0] and not " " in board[1] and not " " in board[2]:
-        print("\nDRAW!\n")
+        print("\nDRAW!\nA strange game.\nThe only winning move is not to play.")
         newgame()
 newgame()
 plyr = 0
