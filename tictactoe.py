@@ -7,7 +7,7 @@ board = [
 ]
 players = ["X","O"]
 def newgame():
-    print("When entering move, please enter column followed by row. e.g. "+random.choice(letters)+str(random.randint(1,3)))
+    print("When entering a move, please enter column followed by row. e.g. "+random.choice(letters)+str(random.randint(1,3))+"\n")
     for row in range(0,3):
         for col in range(0,3):
             board[row][col] = " "
