@@ -1,5 +1,5 @@
-# tictactow-python
-Play tic tac toe with another player in the console
+# Simple python games
+Play tic tac toe or hangman in the console
 
 ### 2022-04-16
 I was working through the challenges on [Python Principles](https://pythonprinciples.com/challenges/) when I came across [one](https://pythonprinciples.com/challenges/Tic-tac-toe-input/) that challenges you to convert a player string into a tuple ("A3"=(2,0)) for the imagined purpose of creating a tic-tac-toe game. So I put my attempt in and then challenged myself to expand that into an actual tic-tac-toe game that you can play in the console.
@@ -14,3 +14,6 @@ I got woke up early by dog this morning. I couldn't get back to sleep after I to
 I'll add difficulty levels later. Easy: it prioritises placing its mark wherever it might be possible to complete the game first. Medium: it prioritises moves by defence and trying to create maximum opportunity (e.g. going for 3 corners). Hard: it uses my daughter's devious tactics of misdirection and creating traps. Impossible: Basically going against WOPR from [WarGames](https://www.imdb.com/title/tt0086567/). The CPU plays defensively, blocking all possible from the player. (The computer won't explicitly try and win on Impossible, it will just make sure that you can't.)
 
 I'm going to go back to bed now!
+
+### 2022-04-17 (afternoon)
+I didn't get back to sleep, but I didn't work on tic-tac-toe either. I made hangman instead. Fill a json file with samples and the computer will randomly select a Hangman for you to solve.
