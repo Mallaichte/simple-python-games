@@ -94,8 +94,10 @@ def check_character(char):
     else:
         wrong_answer()
 def player_guess():
+    global letters
     while not done:
         guess = input("Please enter your guess: ")
+        letters += guess
         check_character(guess)
         gal()
         print(masked)
