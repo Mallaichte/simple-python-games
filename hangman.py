@@ -31,10 +31,13 @@ def mask():
     for char in range(len(answer)):
         if answer[char] == " ":
             masked += "/"
+        elif answer[char] in ",:'&.!?;()":
+            masked += answer[char]
         else:
             masked += "-"
 
 def newgame():
+    print("Please note that a double forwardslash (//) indicates a hyphen(-)")
     global catgory, answer, masked, letters, lives, head, body, leftarm, rightarm, leftleg, rightleg, done
     done = False
     category = ""
@@ -54,13 +57,13 @@ def newgame():
     player_guess()
 
 def gameover():
-    print("\n\nGAME OVER\n  ( x x )\n     ^")
+    print("\n\nGAME OVER\n"+answer+"\n  ( x x )\n     ^")
     global done
     done = True
     menu()
 
 def win():
-    print("\n\nYou win!\n  ( o o )\n     W")
+    print("\n\nYou win!\n"+answer+"\n  ( o o )\n     W")
     global done
     done = True
     menu()
