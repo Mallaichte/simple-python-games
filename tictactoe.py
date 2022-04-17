@@ -1,5 +1,4 @@
 import random
-import os
 letters = ["A","B","C"]
 board = [
     [" ", " ", " "],
