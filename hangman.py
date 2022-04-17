@@ -18,7 +18,7 @@ rightleg = " " #\\
 done = False
 
 def gal():
-    gallows = "\n  |----¬   "+category+"\n  |    "+head+"\n  |   "+leftarm+body+rightarm+"  "+letters+"\n  |   "+leftleg+" "+rightleg+"  "+str(lives)+" attempts left\n__|__\n"
+    gallows = "\n  |----¬   "+category+"\n  |    "+head+"\n  |   "+leftarm+body+rightarm+"  "+letters.rstrip(",")+"\n  |   "+leftleg+" "+rightleg+"  "+str(lives)+" attempts left\n__|__\n"
     print(gallows)
 
 def mask():
@@ -57,13 +57,13 @@ def newgame():
     player_guess()
 
 def gameover():
-    print("\n\nGAME OVER\n"+answer+"\n  ( x x )\n     ^")
+    print("\n\nGAME OVER\n"+answer+"\n\n  ( x x )\n     ^\n")
     global done
     done = True
     menu()
 
 def win():
-    print("\n\nYou win!\n"+answer+"\n  ( o o )\n     W")
+    print("\n\nYou win!\n"+answer+"\n\n  ( o o )\n     W\n")
     global done
     done = True
     menu()
@@ -100,10 +100,15 @@ def player_guess():
     global letters
     while not done:
         guess = input("Please enter your guess: ")
-        letters += guess
-        check_character(guess)
-        gal()
-        print(masked)
+        if len(guess) != 1:
+            print("Please only guess one character at a time.")
+        elif not guess.upper() in letters.upper():
+            letters += guess.upper()+","
+            check_character(guess)
+            gal()
+            print(masked)
+        else:
+            print("You've already guessed that character.")
 def menu():
     if input("Play a game of hang man? [Y/N]: ").upper()[0] == "Y":
         newgame()
