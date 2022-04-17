@@ -50,7 +50,7 @@ def menu():
                 plyr += 1
     elif choice.upper() == "X":
         print("Good bye.")
-        os._exit(os.EX_OK)
+        exit()
     else:
         print("Please choose a valid option")
 def newgame():
@@ -73,7 +73,7 @@ def printboard():
         boardstr += str(c)+"\n  -------------\n"
         c +=1
     boardstr += "    A   B   C   "
-    print(boardstr.rstrip(""))
+    print(boardstr)
 def get_row_col(rowcol):
     if rowcol[0].upper() == "A":
         col = 0
