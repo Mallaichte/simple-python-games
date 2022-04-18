@@ -9,7 +9,6 @@ Almost extactly 1hr 45 mins later, I had a version I was happy with.
 
 Next logical step will be to allow the player to play versus the computer.
 
-## Hang man
 ### 2022-04-17
 I got woke up early by dog this morning. I couldn't get back to sleep after I took her out. My stupid brain kept telling me that it'd written the player vs cpu code and I better get up and add it to the script otherwise it'd keep nagging me. So I did. CPU chooses randomly from available spaces.
 
@@ -17,8 +16,11 @@ I'll add difficulty levels later. Easy: it prioritises placing its mark wherever
 
 I'm going to go back to bed now!
 
+## Hang man
 ### 2022-04-17 (afternoon)
 I didn't get back to sleep, but I didn't work on tic-tac-toe either. I made hangman instead. Fill a json file with samples and the computer will randomly select a Hangman for you to solve.
 
 ### 2022-04-17 (Evening)
 I've updated the answers.json with a larger selection of answers and created a tool (add_answers.py) to add additional answers to the file more easily.
+
+
