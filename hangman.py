@@ -26,18 +26,18 @@ def mask():
     global answer
     global masked
     choice = random.choice(answers)
+    answers.remove(choice)
     category = choice["category"]
     answer = choice["answer"]
     for char in range(len(answer)):
         if answer[char] == " ":
             masked += "/"
-        elif answer[char] in ",:'&.!?;()":
+        elif answer[char] in ",:'&.!?;()*-":
             masked += answer[char]
         else:
-            masked += "-"
+            masked += "₋"
 
 def newgame():
-    print("Please note that a double forwardslash (//) indicates a hyphen(-)")
     global catgory, answer, masked, letters, lives, head, body, leftarm, rightarm, leftleg, rightleg, done
     done = False
     category = ""
@@ -92,7 +92,7 @@ def check_character(char):
         for c in range(len(answer)):
             if answer[c].upper() == char.upper():
                 masked= masked[:c]+char.upper()+masked[c+1:]
-        if not "-" in masked:
+        if not "₋" in masked:
             win()
     else:
         wrong_answer()
