@@ -77,7 +77,6 @@ def playermove():
         replaceletter = input("Which letter do you want to replace "+maskletter+" with? : ").upper()
     playerkey.update({maskletter:replaceletter})
     print("ENCRYPTED: "+masked+" - "+author+"\nDECRYPTED: "+unmask(playerkey))
-    print(playerkey)
 
 def newgame():
     global playerkey 
