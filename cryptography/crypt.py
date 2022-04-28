@@ -42,6 +42,7 @@ def mask():
     print(author + " - " + masked)
 
 def unmask(ukey):
+    alpha = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
     unmaskstr = ""
     for i in range(len(masked)):
         if masked[i] in alpha:
@@ -67,8 +68,8 @@ def playermove():
     maskletter = input("Which letter do you want to replace? : ").upper()
     if maskletter == "!C":
         updateremainingletters()
-        maskletter = random.choice(remainingletters)
-        #maskletter = input("Which letter would you like to reveal? : ").upper()
+        #maskletter = random.choice(remainingletters)
+        maskletter = input("Which letter would you like to reveal? : ").upper()
         replaceletter = unmaskkey[maskletter]
         print(maskletter+" will be replaced by "+replaceletter)
     elif maskletter == "!A":
