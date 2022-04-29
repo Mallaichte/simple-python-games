@@ -24,3 +24,9 @@ I didn't get back to sleep, but I didn't work on tic-tac-toe either. I made hang
 I've updated the answers.json with a larger selection of answers and created a tool (add_answers.py) to add additional answers to the file more easily.
 
 
+## Cryptography
+### 2022-04-28
+
+A work in progress cryptography game. Takes a quote randomly from a dictionary and generates a random substitution cypher. The player is tasked with breaking the cipher to reveal the quote.
+
+There are options to check your answers, reveal part of the key or reveal the correct answer.
