@@ -65,7 +65,7 @@ def updateremainingletters():
 def playermove():
     global playerkey
     global remainingletters
-    maskletter = input("Which letter do you want to replace? : ").upper()
+    maskletter = input("Which letter do you want to replace? (or type '!c' to reveal one letter or '!a' to reveal all letters) : ").upper()
     if maskletter == "!C":
         updateremainingletters()
         #maskletter = random.choice(remainingletters)
