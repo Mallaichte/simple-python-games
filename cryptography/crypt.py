@@ -65,19 +65,27 @@ def updateremainingletters():
 def playermove():
     global playerkey
     global remainingletters
-    maskletter = input("Which letter do you want to replace? (or type '!c' to reveal one letter or '!a' to reveal all letters) : ").upper()
+    maskletter = input("(Type '!c' to check your answers, '!r' to reveal one letter or '!a' to reveal all letters)\nWhich letter do you want to replace? : ").upper()
     if maskletter == "!C":
+        for checkthis in playerkey:
+            if playerkey[checkthis] != unmaskkey[checkthis] and playerkey[checkthis] != "-":
+                print(checkthis+" : "+playerkey[checkthis]+" is NOT correct.")
+            elif playerkey[checkthis] == unmaskkey[checkthis]:
+                print(checkthis+" : "+playerkey[checkthis]+" IS correct.")
+    elif maskletter == "!R":
         updateremainingletters()
         #maskletter = random.choice(remainingletters)
         maskletter = input("Which letter would you like to reveal? : ").upper()
         replaceletter = unmaskkey[maskletter]
         print(maskletter+" will be replaced by "+replaceletter)
+        playerkey.update({maskletter:replaceletter})
+        print("ENCRYPTED: "+masked+" - "+author+"\nDECRYPTED: "+unmask(playerkey))
     elif maskletter == "!A":
         unmask(unmaskkey)
     else:
         replaceletter = input("Which letter do you want to replace "+maskletter+" with? : ").upper()
-    playerkey.update({maskletter:replaceletter})
-    print("ENCRYPTED: "+masked+" - "+author+"\nDECRYPTED: "+unmask(playerkey))
+        playerkey.update({maskletter:replaceletter})
+        print("ENCRYPTED: "+masked+" - "+author+"\nDECRYPTED: "+unmask(playerkey))
 
 def newgame():
     global playerkey 
